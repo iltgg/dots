@@ -34,12 +34,13 @@ LGRE="$(tput setaf 10)"
 LRED="$(tput setaf 9)"
 RESET="$(tput sgr0)"
 
-PS1='\[${BLU}\]\W \[${LBLU}\]\$ \[${RESET}\]'
+PS1='\[${PUR}\]\W \[${WHI}\]\$ \[${RESET}\]'
 # PS1='\[${PUR}\]\u\[${WHI}\]@\[${LPUR}\]\h \[${BLU}\]\W \[${LBLU}\]\$ \[${RESET}\]'
 # PS1='[\u@\h \W]\$ '
 
 export PATH=$HOME/bin:$PATH
 export VISUAL=nvim
 export EDITOR=nvim
+export XDG_SCREENSHOTS_DIR=$HOME/screenshots
 chmod -R 755 $HOME/bin
 ls
