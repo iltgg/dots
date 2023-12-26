@@ -2,6 +2,8 @@
 
 Home of all my Linux dots, to be continued...
 
+Onedark is optimal color scheme.
+
 ![riced desktop](/rice.png?raw=true)
 
 ## Current Desktop
@@ -38,8 +40,13 @@ Edit configs if not using:
 
 ## Other Packages
 
+For equalizer config:
 - pipewire
 - pulseaudio (pipewire)
+
+Utilities:
+- cava
+- btop
 
 ## Installation
 
