@@ -42,5 +42,6 @@ export PATH=$HOME/bin:$PATH
 export VISUAL=nvim
 export EDITOR=nvim
 export XDG_SCREENSHOTS_DIR=$HOME/screenshots
+export QT_QPA_PLATFORMTHEME=gtk2
 chmod -R 755 $HOME/bin
 ls

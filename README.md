@@ -17,18 +17,20 @@ Onedark is the optimal color scheme.
 
 Dependencies not listed:
 
+Hyprland/DE:
 - hyprland
 - hyprpaper
 - mako
 - grimblast
 - wofi
 
+Waybar:
 - waybar
 - pavucontrol
 - swappy
 - playerctl
 
-## Assumed Applications
+## Default Applications
 
 Edit configs if not using:
 
