@@ -2,7 +2,7 @@
 
 Home of all my Linux dots, to be continued...
 
-Onedark is optimal color scheme.
+Onedark is the optimal color scheme.
 
 ![riced desktop](/rice.png?raw=true)
 
@@ -36,7 +36,8 @@ Edit configs if not using:
 - thunar
 - spotify
 - discord
-- kitty
+- ~~kitty~~ (weird ghost text bug on terminal resize)
+- alacritty
 
 ## Other Packages
 
