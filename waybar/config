@@ -5,12 +5,12 @@
 	"spacing": 20,
     "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["mpris"],
-    "modules-right": ["tray", "battery", "clock", "network"],
+    "modules-right": ["tray", "pulseaudio", "battery", "clock", "network"],
 	"hyprland/workspaces": {
 		
 	},
 	"hyprland/window": {
-		
+		"separate-outputs": true
 	},
 	"mpris": {
 		"player": "spotify",
@@ -30,6 +30,12 @@
 		"show-passive-items": true,
 		"spacing": 5
 	},
+	"pulseaudio": {
+		"format": "<span color='#ABB2BF'>🔊</span> {volume}%",
+		"format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
+		"on-click": "bash ~/.config/waybar/toggle_pavu.sh",
+		"on-click-right": "pamixer -t"
+	},
     "battery": {
         "format": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
@@ -37,7 +43,26 @@
     "clock": {
 		"interval": 1,
 		"format": "{:%Y-%m-%d %I:%M %p}",
-        "format-alt": "{:%A, %B %e, %Y | %Y-%m-%d %H:%M:%S}"
+        "format-alt": "{:%A, %B %e, %Y | %Y-%m-%d %H:%M:%S}",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+				"mode"          : "month",
+				"mode-mon-col"  : 3,
+				"weeks-pos"     : "right",
+				"on-scroll"     : 1,
+				"format": {
+						"months":     "<span color='#C678DD'><b>{}</b></span>",
+						"days":       "<span color='#ABB2BF'><b>{}</b></span>",
+						"weeks":      "<span color='#98C379'><b>W{}</b></span>",
+						"weekdays":   "<span color='#61AFEF'><b>{}</b></span>",
+						"today":      "<span color='#E06C75'><b><u>{}</u></b></span>"
+					  }
+		},
+		"actions":  {
+		"on-click-right": "mode",
+		"on-scroll-up": "shift_down",
+		"on-scroll-down": "shift_up"
+		}
     },
 	"network": {
 		"format": "{ifname}",
