@@ -6,6 +6,8 @@ Onedark is the optimal color scheme.
 
 ![riced desktop](/rice.png?raw=true)
 
+Wallpaper credit: [RMRADEV](https://www.deviantart.com/rmradev)
+
 ## Current Desktop
 
 - Arch Linux
@@ -29,6 +31,10 @@ Waybar:
 - pavucontrol
 - swappy
 - playerctl
+
+Misc:
+- wlogout
+- swaylock
 
 ## Default Applications
 
