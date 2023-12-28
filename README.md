@@ -17,13 +17,15 @@ Wallpaper credit: [RMRADEV](https://www.deviantart.com/rmradev)
 
 ## Required Packages/Applications
 
-Dependencies not listed:
+Dependencies not listed.
+
+*Hack Nerd Font* used in most places.
 
 Hyprland/DE:
 - hyprland
 - hyprpaper
 - mako
-- grimblast
+- grimblast (aur)
 - wofi
 
 Waybar:
@@ -44,7 +46,7 @@ Edit configs if not using:
 - thunar
 - spotify
 - discord
-- ~~kitty~~ (weird ghost text bug on terminal resize)
+- ~~kitty~~ (weird ghost text bug on terminal resize + weird rendering of italics)
 - alacritty
 
 ## Other Packages
@@ -54,7 +56,7 @@ For equalizer config:
 - pulseaudio (pipewire)
 
 Utilities:
-- cava
+- cava (aur)
 - btop
 
 ## Installation
