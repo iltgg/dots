@@ -10,7 +10,8 @@
 		
 	},
 	"hyprland/window": {
-		"separate-outputs": true
+		"separate-outputs": true,
+		"max-length": 40
 	},
 	"mpris": {
 		"player": "spotify",
