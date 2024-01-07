@@ -156,9 +156,13 @@ require('lazy').setup({
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
-    config = function()
+    opts = {
+      transparent = true
+    },
+    config = function(_, opts)
+      require('onedark').setup(opts)
       vim.cmd.colorscheme 'onedark'
-    end,
+    end
   },
 
   {
@@ -229,7 +233,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  { import = 'custom.plugins' },
+  { import = 'plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -275,7 +279,7 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 vim.o.cursorline = true
-vim.cmd("hi CursorLine gui=underline cterm=underline")
+-- vim.cmd("hi CursorLine gui=underline cterm=underline")
 
 vim.o.spell = true
 vim.o.tabstop = 4
