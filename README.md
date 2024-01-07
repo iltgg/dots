@@ -35,7 +35,7 @@ Waybar:
 - playerctl
 
 Misc:
-- wlogout
+- wlogout (aur)
 - swaylock
 
 ## Default Applications
