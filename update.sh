@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cp ~/.config/alacritty.toml ./
 cp -r ~/.config/hypr ./
 # cp -r ~/.config/kitty ./

@@ -2,12 +2,18 @@
     "layer": "top",
 	"height": 32,
 	"margin": "5 5 0 5",
-	"spacing": 20,
-    "modules-left": ["hyprland/workspaces", "hyprland/submap", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces", "custom/special", "hyprland/submap", "hyprland/window"],
 	"modules-center": ["mpris"],
     "modules-right": ["tray", "pulseaudio", "battery", "backlight", "clock", "network"],
 	"hyprland/workspaces": {
-		
+		"format": "{icon}",
+		"format-icons": {
+			"discord": "󰙯",
+			"spotify": ""
+		}
+	},
+	"custom/special": {
+		"exec": "~/.config/waybar/special.sh"
 	},
 	"hyprland/window": {
 		"separate-outputs": true,

@@ -21,6 +21,12 @@ padding: 0 20px;
 .modules-left {
 padding: 0 20px 0 0 ;
 }
+.modules-right > * > * {
+margin-right: 20px;
+}
+.modules-right > *:last-child > * {
+margin-right: 0px;
+}
 
 #workspaces button {
 background: transparent;
@@ -43,10 +49,18 @@ box-shadow: none;
 border: none;
 text-shadow: none;
 }
+#custom-special {
+padding: 0 1em;
+color: #21252B;
+background-color: #61AFEF;
+}
 #submap {
 color: #21252B;
 background-color: #C678DD;
 padding: 0 1em;
+}
+#window {
+margin-left: 20px;
 }
 
 #mpris {
