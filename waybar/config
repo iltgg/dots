@@ -45,10 +45,13 @@
 	},
     "battery": {
         "format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% {icon}",
         "format-icons": ["", "", "", "", ""]
     },
 	"backlight": {
-		
+		"format": "{percent}% {icon}",
+		"format-icons": ["", "", "", "", "", "", "", "", ""],
+		"reverse-scrolling": true
 	},
     "clock": {
 		"interval": 1,

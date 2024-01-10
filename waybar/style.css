@@ -77,6 +77,9 @@ background-image: linear-gradient(135deg, #E06C75, #C678DD);
 #pulseaudio {
 padding-top: 3px;
 }
+#battery.charging {
+color: #98C379;
+}
 #clock {
 color: #61AFEF;
 }

@@ -62,8 +62,43 @@ return {
       ["~"] = "actions.tcd",
       ["gs"] = "actions.change_sort",
       ["gx"] = "actions.open_external",
+      ["go"] = {
+        callback = function()
+          -- override based on file extension here
+          local ext_table = {
+            ["pdf"] = "zathura"
+          }
+          local function getLastToken(str)
+            local tokens = {}
+            for token in string.gmatch(str, "[^.]+") do
+              table.insert(tokens, token)
+            end
+            return tokens[#tokens]
+          end
+
+          -- get current file
+          local oil = require("oil")
+          local line = oil.get_cursor_entry()
+          if (line == nil) then return end
+          if (line.type ~= "file") then
+            return
+          end
+
+          -- check if file extension is mapped and execute custom opener
+          local ext = getLastToken(line.name)
+          ext = ext_table[ext]
+          if (ext) then
+            local dir = oil.get_current_dir()
+            vim.fn.jobstart(ext .. " " .. dir .. line.name)
+          else
+            require("oil.actions").open_external.callback()
+          end
+        end,
+        desc = "open_external override",
+        mode = "n"
+      },
       ["g."] = "actions.toggle_hidden",
-      ["g\\"] = "actions.toggle_trash",
+      ["g\\"] = "actions.toggle_trash"
     },
     -- Set to false to disable all of the above keymaps
     use_default_keymaps = true,
