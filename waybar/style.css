@@ -1,85 +1,86 @@
 * {
-font-family: Hack Nerd Font;
-font-size: 14px;
+  font-family: Hack Nerd Font;
+  font-size: 14px;
 }
 window#waybar {
-background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
 tooltip {
-background-color: rgba(40, 44, 52, 0.92);
-border: 2px solid #ABB2BF;
-margin-top: 0;
+  background-color: rgba(40, 44, 52, 0.92);
+  border: 2px solid #abb2bf;
+  margin-top: 0;
 }
 
-.modules-right, .modules-left {
-background-color: #282C34;
-color: #F6F7F9;
-border-radius: 10px;
-padding: 0 20px;
+.modules-right,
+.modules-left {
+  background-color: #282c34;
+  color: #f6f7f9;
+  border-radius: 10px;
+  padding: 0 20px;
 }
 .modules-left {
-padding: 0 20px 0 0 ;
+  padding: 0 20px 0 0;
 }
 .modules-right > * > * {
-margin-right: 20px;
+  margin-right: 20px;
 }
 .modules-right > *:last-child > * {
-margin-right: 0px;
+  margin-right: 0px;
 }
 
 #workspaces button {
-background: transparent;
-color: #F6F7F9;
-border: none;
-border-radius: 0;
+  background: transparent;
+  color: #f6f7f9;
+  border: none;
+  border-radius: 0;
 }
 #workspaces button label {
-font-size: 18px;
+  font-size: 18px;
 }
 #workspaces button:first-child {
-border-radius: 10px 0 0 10px;
+  border-radius: 10px 0 0 10px;
 }
 #workspaces button.active {
-color: #21252B;
-background-image: linear-gradient(135deg, #61AFEF, #C678DD);
+  color: #21252b;
+  background-image: linear-gradient(135deg, #61afef, #c678dd);
 }
 #workspaces button:hover {
-box-shadow: none;
-border: none;
-text-shadow: none;
+  box-shadow: none;
+  border: none;
+  text-shadow: none;
 }
 #custom-special {
-padding: 0 1em;
-color: #21252B;
-background-color: #61AFEF;
+  padding: 0 1em;
+  color: #21252b;
+  background-color: #61afef;
 }
 #submap {
-color: #21252B;
-background-color: #C678DD;
-padding: 0 1em;
+  color: #21252b;
+  background-color: #c678dd;
+  padding: 0 1em;
 }
 #window {
-margin-left: 20px;
+  margin-left: 20px;
 }
 
 #mpris {
-background-image: linear-gradient(135deg, #61AFEF, #C678DD);
-color: #21252B;
-padding: 0 20px;
-font-weight: bold;
-border-radius: 10px;
+  background-image: linear-gradient(135deg, #61afef, #c678dd);
+  color: #21252b;
+  padding: 0 20px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 #mpris.paused {
-background-image: linear-gradient(135deg, #E06C75, #C678DD);
+  background-image: linear-gradient(135deg, #e06c75, #c678dd);
 }
 
 #pulseaudio {
-padding-top: 3px;
+  padding-top: 3px;
 }
 #battery.charging {
-color: #98C379;
+  color: #98c379;
 }
 #clock {
-color: #61AFEF;
+  color: #61afef;
 }

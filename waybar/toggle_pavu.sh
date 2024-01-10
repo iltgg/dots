@@ -3,7 +3,7 @@
 PROCESS="pavucontrol"
 
 if pgrep -x "$PROCESS" > /dev/null; then
-	pkill -f "$PROCESS"
+    pkill -f "$PROCESS"
 else
-	/bin/$PROCESS &
+    /bin/$PROCESS &
 fi

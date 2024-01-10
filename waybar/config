@@ -1,86 +1,98 @@
 {
-    "layer": "top",
-	"height": 32,
-	"margin": "5 5 0 5",
-    "modules-left": ["hyprland/workspaces", "custom/special", "hyprland/submap", "hyprland/window"],
-	"modules-center": ["mpris"],
-    "modules-right": ["tray", "pulseaudio", "battery", "backlight", "clock", "network"],
-	"hyprland/workspaces": {
-		"format": "{icon}",
-		"format-icons": {
-			"discord": "󰙯",
-			"spotify": ""
-		}
-	},
-	"custom/special": {
-		"exec": "~/.config/waybar/special.sh"
-	},
-	"hyprland/window": {
-		"separate-outputs": true,
-		"max-length": 40
-	},
-	"mpris": {
-		"player": "spotify",
-		"interval": 1,
-		"format": "{player_icon} {artist} - {title} - <small>[{position}/{length}]</small>",
-		"format-paused": "{status_icon} {artist} - {title} - <small>[{position}/{length}]</small>",
-		"player-icons": {
-			"default": "▶",
-			"mpv": "🎵",
-			"spotify": " ",
-		},
-		"status-icons": {
-			"paused": "⏸"
-		},
-	},
-	"tray": {
-		"show-passive-items": true,
-		"spacing": 5
-	},
-	"pulseaudio": {
-		"format": "<span color='#ABB2BF'>🔊</span> {volume}%",
-		"format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
-		"on-click": "bash ~/.config/waybar/toggle_pavu.sh",
-		"on-click-right": "pamixer -t"
-	},
-    "battery": {
-        "format": "{capacity}% {icon}",
-		"format-charging": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+  "layer": "top",
+  "height": 32,
+  "margin": "5 5 0 5",
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/special",
+    "hyprland/submap",
+    "hyprland/window"
+  ],
+  "modules-center": ["mpris"],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "battery",
+    "backlight",
+    "clock",
+    "network"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "discord": "󰙯",
+      "spotify": ""
+    }
+  },
+  "custom/special": {
+    "exec": "~/.config/waybar/special.sh"
+  },
+  "hyprland/window": {
+    "separate-outputs": true,
+    "max-length": 40
+  },
+  "mpris": {
+    "player": "spotify",
+    "interval": 1,
+    "format": "{player_icon} {artist} - {title} - <small>[{position}/{length}]</small>",
+    "format-paused": "{status_icon} {artist} - {title} - <small>[{position}/{length}]</small>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+      "spotify": " "
     },
-	"backlight": {
-		"format": "{percent}% {icon}",
-		"format-icons": ["", "", "", "", "", "", "", "", ""],
-		"reverse-scrolling": true
-	},
-    "clock": {
-		"interval": 1,
-		"format": "{:%Y-%m-%d %I:%M %p}",
-        "format-alt": "{:%A, %B %e, %Y | %Y-%m-%d %H:%M:%S}",
-		"tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-				"mode"          : "month",
-				"mode-mon-col"  : 3,
-				"weeks-pos"     : "right",
-				"on-scroll"     : 1,
-				"format": {
-						"months":     "<span color='#C678DD'><b>{}</b></span>",
-						"days":       "<span color='#ABB2BF'><b>{}</b></span>",
-						"weeks":      "<span color='#98C379'><b>W{}</b></span>",
-						"weekdays":   "<span color='#61AFEF'><b>{}</b></span>",
-						"today":      "<span color='#E06C75'><b><u>{}</u></b></span>"
-					  }
-		},
-		"actions":  {
-		"on-click-right": "mode",
-		"on-scroll-up": "shift_down",
-		"on-scroll-down": "shift_up"
-		}
+    "status-icons": {
+      "paused": "⏸"
+    }
+  },
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 5
+  },
+  "pulseaudio": {
+    "format": "<span color='#ABB2BF'>🔊</span> {volume}%",
+    "format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
+    "on-click": "bash ~/.config/waybar/toggle_pavu.sh",
+    "on-click-right": "pamixer -t"
+  },
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-charging": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "reverse-scrolling": true
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%Y-%m-%d %I:%M %p}",
+    "format-alt": "{:%A, %B %e, %Y | %Y-%m-%d %H:%M:%S}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#C678DD'><b>{}</b></span>",
+        "days": "<span color='#ABB2BF'><b>{}</b></span>",
+        "weeks": "<span color='#98C379'><b>W{}</b></span>",
+        "weekdays": "<span color='#61AFEF'><b>{}</b></span>",
+        "today": "<span color='#E06C75'><b><u>{}</u></b></span>"
+      }
     },
-	"network": {
-		"format": "{ifname}",
-		"format-wifi": "{ifname} {essid} ({signalStrength}%)",
-		"format-ethernet": "{ifname} wired",
-		"format-disconnected": "no connection"
-	}
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up"
+    }
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{ifname} {essid} ({signalStrength}%)",
+    "format-ethernet": "{ifname} wired",
+    "format-disconnected": "no connection"
+  }
 }
