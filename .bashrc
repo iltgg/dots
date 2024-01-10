@@ -12,11 +12,14 @@ alias ..='cd ..'
 
 # alias vim='nvim'
 alias vi='nvim'
-alias emacs='nvim'
-alias nano='nvim'
-alias cvi='nvim --clean'
+alias vic='nvim --clean'
+alias viw='NVIM_MD_AUTO=true nvim'
 
 alias sudo='sudo '
+
+diffstrings () {
+diff <( printf '%s\n' "$1" ) <( printf '%s\n' "$2" )
+}
 
 WHI="$(tput setaf 7)"
 CYA="$(tput setaf 6)"
@@ -34,9 +37,7 @@ LGRE="$(tput setaf 10)"
 LRED="$(tput setaf 9)"
 RESET="$(tput sgr0)"
 
-PS1='\[${PUR}\]\W \[${WHI}\]\$ \[${RESET}\]'
-# PS1='\[${PUR}\]\u\[${WHI}\]@\[${LPUR}\]\h \[${BLU}\]\W \[${LBLU}\]\$ \[${RESET}\]'
-# PS1='[\u@\h \W]\$ '
+PS1='\[${WHI}\]\W \[${PUR}\]\$ \[${RESET}\]'
 
 export PATH=$HOME/bin:$PATH
 export VISUAL=nvim
@@ -44,4 +45,3 @@ export EDITOR=nvim
 export XDG_SCREENSHOTS_DIR=$HOME/screenshots
 export QT_QPA_PLATFORMTHEME=gtk2
 chmod -R 755 $HOME/bin
-ls
