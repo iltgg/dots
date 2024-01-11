@@ -20,5 +20,6 @@ then
     cp -r ./wlogout ~/.config/
     cp -r ./swappy ~/.config/
     echo "update complete"
+else
+    echo "update cancelled"
 fi
-echo "update cancelled"

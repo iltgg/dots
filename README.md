@@ -1,44 +1,53 @@
 # dots
 
-Home of all my Linux dots, to be continued...
-
-Onedark is the optimal color scheme.
+Heavily personalised `Hyprland` based desktop following the onedark color scheme. 
 
 ![riced desktop](/rice.png?raw=true)
 
-Wallpaper credit: [RMRADEV](https://www.deviantart.com/rmradev)
+Wallpaper credit:
+
+"[Colorful Mountains](https://www.deviantart.com/rmradev/art/Colorful-Mountains-888882581)" by [RMRADEV](https://www.deviantart.com/rmradev), used under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) / further attribution added to artwork
 
 ## Current Desktop
 
 - Arch Linux
 - Hyprland
-- Wofi
 - Waybar
 
 ## Required Packages/Applications
 
-Dependencies not listed.
+Dependencies of dependencies not listed
 
-*Hack Nerd Font* used in most places.
+### Desktop
 
-Hyprland/DE:
+Fonts:
+- Hack Nerd Font
+
+Desktop:
 - hyprland
 - hyprpaper
+- wofi
 - mako
 - grimblast (aur)
-- wofi
+- swappy
 
-Waybar:
+Bar:
 - waybar
 - pavucontrol
-- swappy
+- pulseaudio (pipewire)
 - playerctl
+- pamixer
+- jq
+- socat
 
-Misc:
+Equalizer Config:
+- pipewire
+
+Power Menu and Lock:
 - wlogout (aur)
 - swaylock
 
-## Default Applications
+### Default Applications
 
 Edit configs if not using:
 
@@ -49,16 +58,26 @@ Edit configs if not using:
 - ~~kitty~~ (weird ghost text bug on terminal resize + weird rendering of italics)
 - alacritty
 
-## Other Packages
+### Utilities
 
-For equalizer config:
-- pipewire
-- pulseaudio (pipewire)
+Code/text editing:
+- neovim
 
-Utilities:
-- cava (aur)
+Misc:
 - btop
+- cava (aur)
+- neofetch
 
 ## Installation
 
-WIP
+1. Ensure all dependencies are met
+2. Back up current configs
+3. Edit `update-local.sh` to update/install only required configs
+4. Run `update-local.sh`
+5. Restart `Hyprland`
+
+### Extra
+
+Install the `tabliss` browser extension and import `tabliss.json`
+
+Copy `.bashrc`, `.inputrc`, and/or `.vimrc` to your home directory
