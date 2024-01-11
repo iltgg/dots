@@ -112,7 +112,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -283,6 +283,9 @@ vim.o.cursorline = true
 
 vim.o.spell = true
 vim.o.tabstop = 4
+
+vim.o.listchars = 'tab:▹▹▸,trail:~'
+vim.cmd 'set invlist'
 
 -- [[ Basic Keymaps ]]
 
