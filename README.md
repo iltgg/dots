@@ -29,6 +29,7 @@ Desktop:
 - wofi
 - mako
 - grimblast (aur)
+- wl-clipboard
 - swappy
 
 Bar:
