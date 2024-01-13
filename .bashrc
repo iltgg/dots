@@ -10,10 +10,10 @@ alias lsa='ls -a'
 alias grep='grep --color=auto'
 alias ..='cd ..'
 
-# alias vim='nvim'
-alias vi='nvim'
-alias vic='nvim --clean'
-alias viw='NVIM_MD_AUTO=true nvim'
+alias vi='nvim' # speed is key
+alias vic='nvim --clean' # nvim with no configs, probably just use "vim" though
+alias vig='nvim +Git +only' # fugitive is the best git wrapper
+alias viw='NVIM_MD_AUTO=true nvim' # mkdown auto preview
 
 alias sudo='sudo '
 

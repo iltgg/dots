@@ -31,3 +31,8 @@ family = "Hack Nerd Font"
 [window]
 dynamic_padding = true
 opacity = 0.8
+
+[keyboard]
+bindings = [
+   { key = "Return", mods = "Super|Shift", action = "SpawnNewInstance" }
+]
