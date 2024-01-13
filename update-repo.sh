@@ -12,3 +12,7 @@ cp -r ~/.config/mako ./
 cp -r ~/.config/nvim ./
 cp -r ~/.config/wlogout ./
 cp -r ~/.config/swappy ./
+
+cp ~/.bashrc ./
+cp ~/.inputrc ./
+cp ~/.vimrc ./

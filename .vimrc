@@ -4,7 +4,7 @@ set cursorline
 
 set listchars=tab:▹▹▸,trail:~
 set invlist
-		
+
 filetype on
 syntax on
 
