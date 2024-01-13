@@ -185,7 +185,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
-    opts = {},
+    opts = { scope = { enabled = true } },
   },
 
   -- "gc" to comment visual regions/lines
@@ -542,20 +542,17 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
   },
+  pyright = {},
+  clangd = {},
 }
+-- mason_lspconfg ensure installed does not take non language servers
+local non_servers = { 'stylua', 'prettierd', 'autopep8', 'beautysh' }
 
 -- Setup neovim lua configuration
 require('neodev').setup()
@@ -570,6 +567,13 @@ local mason_lspconfig = require 'mason-lspconfig'
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
+-- install non_servers
+local mason_registry = require 'mason-registry'
+for _, ns in pairs(non_servers) do
+  if not mason_registry.is_installed(ns) then
+    vim.cmd('MasonInstall ' .. ns)
+  end
+end
 
 mason_lspconfig.setup_handlers {
   function(server_name)
