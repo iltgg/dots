@@ -56,7 +56,9 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # cd so new terminals can spawn in working dir
 vi () {
-    if [[ -d "$1" ]] then
+    if [[ ! -n "$1" ]]; then
+        nvim
+    elif [[ -d "$1" ]]; then
         cd "$1"
         nvim .
     else
