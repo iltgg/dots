@@ -21,6 +21,5 @@ return {
     }
     -- vim.g.vimtex_log_ignore = {'/\\b(Warning)|(warning)/g'}
     vim.g.vimtex_quickfix_open_on_warning = 0
-    vim.keymap.set({ 'n' }, '<leader>wc', "<Cmd>echo system('texcount ./document.tex')<CR>")
   end,
 }
