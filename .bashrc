@@ -40,7 +40,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias svi='sudo vim'
-alias vi='nvim' # speed is key
+# alias vi='nvim' # speed is key
 alias vi.='nvim .'
 alias vic='nvim --clean' # nvim with no configs, probably just use "vim" though
 alias vig='nvim +Git +only' # fugitive is the best git wrapper
@@ -51,6 +51,19 @@ alias sudo='sudo '
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # FUNCTIONS
+
+# cd so new terminals can spawn in working dir
+vi () {
+    if [[ -d "$1" ]] then
+        cd "$1"
+        nvim .
+    else
+        dir=$(dirname "$1")
+        file=$(basename "$1")
+        cd "$dir"
+        nvim "$file"
+    fi
+}
 
 cdh() {
     cd "${HOME}/${1}"
