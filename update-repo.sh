@@ -1,5 +1,7 @@
 #!/bin/sh
 
+rm -r ./nvim
+
 cp ~/.config/alacritty.toml ./
 cp -r ~/.config/hypr ./
 cp -r ~/.config/neofetch ./

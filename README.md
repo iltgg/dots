@@ -56,7 +56,7 @@ Edit configs if not using:
 - thunar
 - spotify
 - discord
-- ~~kitty~~ (weird ghost text bug on terminal resize + weird rendering of italics)
+- ~~kitty~~ does not render italics correctly for Hack (known issue, not going to be resolved)
 - alacritty
 
 ### Utilities
@@ -82,3 +82,7 @@ Misc:
 Install the `tabliss` browser extension and import `tabliss.json`
 
 Copy `.bashrc`, `.inputrc`, and/or `.vimrc` to your home directory
+
+## Updating
+
+`update-local.sh` removes local nvim directory before copying (potential update to use rsync)
