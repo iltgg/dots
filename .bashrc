@@ -46,6 +46,8 @@ alias vic='nvim --clean' # nvim with no configs, probably just use "vim" though
 alias vig='nvim +Git +only' # fugitive is the best git wrapper
 alias viw='NVIM_MD_AUTO=true nvim' # mkdown auto preview
 
+alias ra='. ranger'
+
 alias sudo='sudo '
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
