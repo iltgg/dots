@@ -112,7 +112,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -411,7 +411,20 @@ vim.defer_fn(function()
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
-    highlight = { enable = true },
+    sync_install = false,
+    ignore_install = {},
+    modules = {},
+
+    highlight = {
+      enable = true,
+      disable = function(lang, buf)
+        local max_filesize = 100 * 1024 -- 100 KB
+        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and stats and stats.size > max_filesize then
+          return true
+        end
+      end,
+    },
     indent = { enable = true },
     incremental_selection = {
       enable = true,
@@ -422,6 +435,7 @@ vim.defer_fn(function()
         node_decremental = '<M-space>',
       },
     },
+
     textobjects = {
       select = {
         enable = true,
@@ -552,7 +566,7 @@ local servers = {
   clangd = {},
 }
 -- mason_lspconfg ensure installed does not take non language servers
-local non_servers = { 'stylua', 'prettierd', 'autopep8', 'beautysh' }
+local non_servers = { 'stylua', 'prettierd', 'autopep8', 'beautysh', 'latexindent' }
 
 -- Setup neovim lua configuration
 require('neodev').setup()
@@ -571,7 +585,11 @@ mason_lspconfig.setup {
 local mason_registry = require 'mason-registry'
 for _, ns in pairs(non_servers) do
   if not mason_registry.is_installed(ns) then
-    vim.cmd('MasonInstall ' .. ns)
+    if mason_registry.has_package(ns) then
+      vim.cmd('MasonInstall ' .. ns)
+    else
+      error('"' .. ns .. '"' .. ' not found in mason-registry!')
+    end
   end
 end
 

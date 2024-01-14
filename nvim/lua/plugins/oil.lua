@@ -1,7 +1,7 @@
 return {
   'stevearc/oil.nvim',
   init = function()
-    vim.keymap.set({ 'n' }, '<leader>pv', vim.cmd.Oil)
+    vim.keymap.set({ 'n' }, '<leader>o', vim.cmd.Oil, { desc = 'Open [O]il' })
   end,
   opts = {
     -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
