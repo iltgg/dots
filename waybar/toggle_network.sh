@@ -1,8 +1,8 @@
 #!/bin/bash
 
-PROCESS="pavucontrol"
+PROCESS="nm-applet"
 
-if pgrep -x "$PROCESS" > /dev/null; then
+if pgrep -f "$PROCESS" > /dev/null; then
     pkill -f "$PROCESS"
 else
     /bin/$PROCESS &

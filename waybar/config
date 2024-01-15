@@ -52,7 +52,7 @@
   "pulseaudio": {
     "format": "<span color='#ABB2BF'>🔊</span> {volume}%",
     "format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
-    "on-click": "bash ~/.config/waybar/toggle_pavu.sh",
+    "on-click": "~/.config/waybar/toggle_pavu.sh",
     "on-click-right": "pamixer -t"
   },
   "battery": {
@@ -91,8 +91,12 @@
   },
   "network": {
     "format": "{ifname}",
-    "format-wifi": "{ifname} {essid} ({signalStrength}%)",
-    "format-ethernet": "{ifname} wired",
-    "format-disconnected": "no connection"
+    "format-wifi": "{essid} {icon} ",
+    "format-ethernet": "{ifname} 󰈀 ",
+    "format-disconnected": "no connection 󰤮 ",
+    "tooltip-format": "{ifname} {ipaddr}",
+    "tooltip-format-wifi": "{ifname} {frequency} ({signalStrength}%)",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "on-click": "~/.config/waybar/toggle_network.sh"
   }
 }
