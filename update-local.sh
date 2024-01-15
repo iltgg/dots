@@ -5,11 +5,11 @@ NC='\033[0m'
 
 echo -e "${RED}DANGER: This script doesn't backup any local configs!${NC}"
 read -p "confirm [Yy]: " -r
-if [[ $REPLY =~ ^[Yy]$ ]]
+if [[ $REPLY =~ ^[Yy]$ ]];
 then
-    echo "[a]ll | [s]imple"
+    echo "[a]ll | [s]imple (excludes hyprland)"
     read -p "update type: " -r
-    if [[ $REPLY =~ ^[a]$ ]] then
+    if [[ $REPLY =~ ^[a]$ ]]; then
         rm -r ~/.config/nvim
         cp ./alacritty.toml ~/.config/
         cp -r ./hypr ~/.config/
@@ -23,11 +23,12 @@ then
         cp -r ./nvim ~/.config/
         cp -r ./wlogout ~/.config/
         cp -r ./swappy ~/.config/
+        cp -r ./ranger ~/.config/
         cp ./.bashrc ~/
         cp ./.inputrc ~/
         cp ./.vimrc ~/
         echo "update complete"
-        elif [[ $REPLY =~ ^[s]$ ]] then
+    elif [[ $REPLY =~ ^[s]$ ]]; then
         rm -r ~/.config/nvim
         cp ./alacritty.toml ~/.config/
         # cp -r ./hypr ~/.config/
@@ -41,6 +42,7 @@ then
         cp -r ./nvim ~/.config/
         cp -r ./wlogout ~/.config/
         cp -r ./swappy ~/.config/
+        cp -r ./ranger ~/.config/
         cp ./.bashrc ~/
         cp ./.inputrc ~/
         cp ./.vimrc ~/

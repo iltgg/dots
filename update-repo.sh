@@ -14,6 +14,7 @@ cp -r ~/.config/mako ./
 cp -r ~/.config/nvim ./
 cp -r ~/.config/wlogout ./
 cp -r ~/.config/swappy ./
+cp -r ~/.config/ranger ./
 
 cp ~/.bashrc ./
 cp ~/.inputrc ./
