@@ -1,5 +1,6 @@
 return {
   'abecodes/tabout.nvim',
+  event = 'VeryLazy',
   opts = {
     tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
     backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
