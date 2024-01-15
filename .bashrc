@@ -65,15 +65,17 @@ vi () {
         if [[ -d "$1" ]]; then # if directory -> enter and open
             cd "$1"
             nvim .
-        else # if file -> cd file dir and open
+        elif [[ -e "$1" ]]; then # if file -> cd file dir and open
             cd "$dir"
             nvim "$base"
+        else # otherwise open
+            nvim $1
         fi
     elif [[ $(pwd) == "$HOME/$dir" ]]; then # if pwd matches file dir -> open base
         nvim "$base"
     elif [[ $(pwd) == "$HOME/$1" || "$(pwd)/" == "$HOME/$1" ]]; then # if pwd matches dir -> open dir
         nvim .
-    else
+    else # otherwise open
         nvim $1
     fi
 }
