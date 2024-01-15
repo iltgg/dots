@@ -54,8 +54,32 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # FUNCTIONS
 
-# cd so new terminals can spawn in working dir
+# cd to dir or file dir if calling nvim from home dir
 vi () {
+    dir=$(dirname "$1")
+    base=$(basename "$1")
+
+    if [[ ! -n "$1" ]]; then # no parameter -> raw nvim
+        nvim
+    elif [[ $(pwd) == $HOME ]]; then # calling from HOME
+        if [[ -d "$1" ]]; then # if directory -> enter and open
+            cd "$1"
+            nvim .
+        else # if file -> cd file dir and open
+            cd "$dir"
+            nvim "$base"
+        fi
+    elif [[ $(pwd) == "$HOME/$dir" ]]; then # if pwd matches file dir -> open base
+        nvim "$base"
+    elif [[ $(pwd) == "$HOME/$1" || "$(pwd)/" == "$HOME/$1" ]]; then # if pwd matches dir -> open dir
+        nvim .
+    else
+        nvim $1
+    fi
+}
+
+# always cd to dir or file dir before opening nvim
+vid () {
     if [[ ! -n "$1" ]]; then
         nvim
     elif [[ -d "$1" ]]; then
