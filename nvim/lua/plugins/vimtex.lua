@@ -1,5 +1,7 @@
 return {
   'lervag/vimtex',
+  lazy = true,
+  ft = { 'tex' },
   config = function()
     vim.g.vimtex_view_method = 'zathura'
     -- vim.g.Tex_DefaultTargetFormat='pdf'
