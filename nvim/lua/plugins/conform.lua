@@ -17,7 +17,8 @@ return {
       tex = { 'latexindent' },
     },
   },
-  init = function()
+  config = function(_, opts)
+    require('conform').setup(opts)
     vim.keymap.set('n', '<leader>f', function()
       require('conform').format()
     end, { desc = '[F]ormat buffer' })

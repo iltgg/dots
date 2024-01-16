@@ -1,7 +1,10 @@
 return {
   'stevearc/oil.nvim',
-  init = function()
-    vim.keymap.set({ 'n' }, '<leader>o', vim.cmd.Oil, { desc = 'Open [O]il' })
+  event = 'VeryLazy',
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  config = function(_, opts)
+    require('oil').setup(opts)
+    vim.keymap.set({ 'n' }, '<leader>O', vim.cmd.Oil, { desc = 'Open [O]il' })
   end,
   opts = {
     -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)

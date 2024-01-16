@@ -1,5 +1,6 @@
 return {
   'romgrk/barbar.nvim',
+  enabled = false,
   lazy = true,
   event = { 'BufEnter' },
   dependencies = {
@@ -28,11 +29,6 @@ return {
       vim.cmd.BufferClose()
     end, {})
   end,
-  opts = {
-    -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-    -- animation = true,
-    -- insert_at_start = true,
-    -- …etc.
-  },
+  opts = {},
   version = '^1.0.0', -- optional: only update when a new 1.x version is released
 }
