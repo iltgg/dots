@@ -1,26 +1,28 @@
 * {
-	background-image: none;
-	font-family: Hack Nerd Font;
-	font-size: 50px;
+  background-image: none;
+  font-family: Hack Nerd Font;
+  font-size: 50px;
 }
 window {
-	background-color: rgba(40, 44, 52, 0.8);
+  background-color: rgba(40, 44, 52, 0.8);
 }
 button {
-	color: #F6F7F9;
-	background-color: #323842;
-	border: none;
-	margin: 10px;
-	border-radius: 50px;
-	box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
-	/* background-repeat: no-repeat; */
-	/* background-position: center; */
-	/* background-size: 25%; */
+  color: #f6f7f9;
+  background-color: #323842;
+  border: none;
+  margin: 10px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.75);
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  /* background-size: 25%; */
 }
 
-button:focus, button:active, button:hover {
-	background-color: #61AFEF;
-	outline-style: none;
+button:focus,
+button:active,
+button:hover {
+  background-color: #61afef;
+  outline-style: none;
 }
 
 /* #lock { */
