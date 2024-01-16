@@ -2,7 +2,7 @@ return {
   'j-morano/buffer_manager.nvim',
   event = 'BufEnter',
   opts = {
-    height = 20,
+    height = 25,
     highlight = 'Normal:BufferManagerBorder',
     win_extra_options = {
       winhighlight = 'Normal:BufferManagerNormal',
@@ -20,7 +20,7 @@ return {
     focus_alternate_buffer = false,
     short_file_names = false,
     short_term_names = false,
-    loop_nav = false,
+    loop_nav = true,
   },
   config = function(_, opts)
     require('buffer_manager').setup(opts)
@@ -28,6 +28,7 @@ return {
 
     local map_opts = { noremap = true }
     local map = vim.keymap.set
+
     -- Navigate buffers bypassing the menu
     local bmui = require 'buffer_manager.ui'
     local keys = '1234567890'
@@ -37,17 +38,9 @@ return {
         bmui.nav_file(i)
       end, map_opts)
     end
-    -- Just the menu
-    map({ 't', 'n' }, '<M-m>', bmui.toggle_quick_menu, map_opts)
-    -- Open menu and search
-    map({ 't', 'n' }, '<M-/>', function()
-      bmui.toggle_quick_menu()
-      -- wait for the menu to open
-      vim.defer_fn(function()
-        vim.fn.feedkeys '/'
-      end, 50)
-    end, map_opts)
-    -- Next/Prev
+
+    map({ 't', 'n' }, '<leader>m', bmui.toggle_quick_menu, { noremap = true, desc = 'Buffer [M]anager' })
+
     map('n', '<M-k>', bmui.nav_next, map_opts)
     map('n', '<M-j>', bmui.nav_prev, map_opts)
   end,
