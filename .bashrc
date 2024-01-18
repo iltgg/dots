@@ -196,12 +196,14 @@ function nonzero_return () {
     [ $RETVAL -ne 0 ] && echo "[$RETVAL]"
 }
 
-function combi () {
-    PREV=$(nonzero_return)
-    echo "${ORA}$(parse_git_branch)${RED}${PREV}"
+function prompt_command () {
+    RET="$(nonzero_return)"
+    BRANCH="$(parse_git_branch)"
+    PS1="\[${GRN}\][\A]\[${CYN}\][\W]\[${ORA}\]$BRANCH\[${RED}\]$RET\[${PUR}\]\$ \[${RST}\]"
 }
 
-PS1="${GRN}[\A]${CYN}[\W]\`combi\`${PUR}\$ ${RST}"
+PROMPT_COMMAND="prompt_command"
+PS1="\$ "
 
 export PATH=$HOME/bin:$PATH
 export VISUAL=vim
