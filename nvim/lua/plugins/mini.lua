@@ -7,5 +7,8 @@ return {
     vim.keymap.set({ 'n' }, '<leader>o', _G.MiniFiles.open, { desc = '[O]pen Files' })
     vim.api.nvim_set_hl(0, 'MiniFilesNormal', { link = 'Normal' })
     vim.api.nvim_set_hl(0, 'MiniFilesBorder', { link = 'Normal' })
+
+    require('mini.pairs').setup()
+    require('mini.move').setup()
   end,
 }

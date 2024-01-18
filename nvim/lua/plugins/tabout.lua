@@ -1,5 +1,6 @@
 return {
   'abecodes/tabout.nvim',
+  enabled = false,
   event = 'VeryLazy',
   opts = {
     tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable

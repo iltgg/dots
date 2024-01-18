@@ -9,11 +9,11 @@ return {
     },
     select_menu_item_commands = {
       v = {
-        key = 'v',
+        key = 'V',
         command = 'vsplit',
       },
       h = {
-        key = 'h',
+        key = 'H',
         command = 'split',
       },
     },
