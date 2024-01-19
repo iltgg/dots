@@ -1,6 +1,5 @@
 set number
 set relativenumber
-set cursorline
 
 set listchars=tab:▹▹▸,trail:~
 set invlist
