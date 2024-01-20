@@ -10,7 +10,7 @@ then
     echo "[a]ll | [s]imple (excludes hyprland)"
     read -p "update type: " -r
     if [[ $REPLY =~ ^[a]$ ]]; then
-        rm -r ~/.config/nvim
+        # rm -r ~/.config/nvim
         cp ./alacritty.toml ~/.config/
         cp -r ./hypr ~/.config/
         cp -r ./neofetch ~/.config/
@@ -29,7 +29,7 @@ then
         cp ./.vimrc ~/
         echo "update complete"
     elif [[ $REPLY =~ ^[s]$ ]]; then
-        rm -r ~/.config/nvim
+        # rm -r ~/.config/nvim
         cp ./alacritty.toml ~/.config/
         # cp -r ./hypr ~/.config/
         cp -r ./neofetch ~/.config/
