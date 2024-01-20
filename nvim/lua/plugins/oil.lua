@@ -79,7 +79,7 @@ return {
           end
 
           -- get current file
-          local oil = require 'oil'
+          local oil = require('oil')
           local line = oil.get_cursor_entry()
           if line == nil then
             return

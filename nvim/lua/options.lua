@@ -45,6 +45,6 @@ vim.o.spell = true
 vim.o.tabstop = 4
 
 vim.o.listchars = 'tab:▹▹▸,trail:~'
-vim.cmd 'set invlist'
+vim.cmd('set invlist')
 
 vim.o.title = true

@@ -7,8 +7,8 @@ return {
     'folke/which-key.nvim',
   },
   config = function()
-    require('surround-ui').setup {
+    require('surround-ui').setup({
       root_key = 'S',
-    }
+    })
   end,
 }

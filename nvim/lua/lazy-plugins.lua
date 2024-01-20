@@ -97,10 +97,10 @@ require('lazy').setup({
         -- Actions
         -- visual mode
         map('v', '<leader>hs', function()
-          gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+          gs.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
         end, { desc = 'stage git hunk' })
         map('v', '<leader>hr', function()
-          gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+          gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
         end, { desc = 'reset git hunk' })
         -- normal mode
         map('n', '<leader>hs', gs.stage_hunk, { desc = 'git stage hunk' })
@@ -110,11 +110,11 @@ require('lazy').setup({
         map('n', '<leader>hR', gs.reset_buffer, { desc = 'git Reset buffer' })
         map('n', '<leader>hp', gs.preview_hunk, { desc = 'preview git hunk' })
         map('n', '<leader>hb', function()
-          gs.blame_line { full = false }
+          gs.blame_line({ full = false })
         end, { desc = 'git blame line' })
         map('n', '<leader>hd', gs.diffthis, { desc = 'git diff against index' })
         map('n', '<leader>hD', function()
-          gs.diffthis '~'
+          gs.diffthis('~')
         end, { desc = 'git diff against last commit' })
 
         -- Toggles
@@ -136,7 +136,7 @@ require('lazy').setup({
     },
     config = function(_, opts)
       require('onedark').setup(opts)
-      vim.cmd.colorscheme 'onedark'
+      vim.cmd.colorscheme('onedark')
     end,
   },
 
@@ -173,7 +173,7 @@ require('lazy').setup({
         'RainbowViolet',
         'RainbowCyan',
       }
-      local hooks = require 'ibl.hooks'
+      local hooks = require('ibl.hooks')
       -- create the highlight groups in the highlight setup hook, so they are reset
       -- every time the colorscheme changes
       hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
@@ -187,7 +187,7 @@ require('lazy').setup({
       end)
 
       vim.g.rainbow_delimiters = { highlight = highlight }
-      require('ibl').setup { scope = { highlight = highlight } }
+      require('ibl').setup({ scope = { highlight = highlight } })
 
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
     end,
@@ -211,7 +211,7 @@ require('lazy').setup({
         --       refer to the README for telescope-fzf-native for more instructions.
         build = 'make',
         cond = function()
-          return vim.fn.executable 'make' == 1
+          return vim.fn.executable('make') == 1
         end,
       },
     },

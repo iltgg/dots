@@ -3,7 +3,7 @@ return {
   event = 'VeryLazy',
   version = false,
   config = function()
-    require('mini.files').setup { options = { use_as_default_explorer = false } }
+    require('mini.files').setup({ options = { use_as_default_explorer = false } })
     local minifiles_toggle = function()
       if not _G.MiniFiles.close() then
         _G.MiniFiles.open()
@@ -19,7 +19,7 @@ return {
           _G.MiniFiles.close()
         end)
         vim.keymap.set('n', '<CR>', function()
-          _G.MiniFiles.go_in {}
+          _G.MiniFiles.go_in({})
         end)
       end,
     })

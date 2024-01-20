@@ -3,8 +3,8 @@ return {
   lazy = true,
   ft = { 'markdown' },
   config = function()
-    require('mkdnflow').setup {
+    require('mkdnflow').setup({
       perspective = { priority = 'current' },
-    }
+    })
   end,
 }
