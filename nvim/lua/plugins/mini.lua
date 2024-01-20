@@ -19,7 +19,7 @@ return {
           _G.MiniFiles.close()
         end)
         vim.keymap.set('n', '<CR>', function()
-          _G.MiniFiles.go_in({})
+          _G.MiniFiles.go_in({ close_on_file = true })
         end)
       end,
     })

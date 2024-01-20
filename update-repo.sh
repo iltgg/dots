@@ -19,3 +19,5 @@ cp -r ~/.config/ranger ./
 cp ~/.bashrc ./
 cp ~/.inputrc ./
 cp ~/.vimrc ./
+
+./set-machine.sh d
