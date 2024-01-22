@@ -12,6 +12,7 @@
 #   ALIASES
 #   FUNCTIONS
 #   EXPORTS
+#   SOURCE
 
 # CONFIGURATION
 
@@ -32,6 +33,7 @@ alias lsl='ls -lh --time-style="+%Y-%m-%d %H:%M:%S"'
 alias lsla='ls -lhA --time-style="+%Y-%m-%d %H:%M:%S"'
 
 alias grep='grep --color=auto'
+alias diff='diff --color=auto'
 
 alias bd='cd "$OLDPWD"'
 alias ..='cd ..'
@@ -205,9 +207,18 @@ function prompt_command () {
 PROMPT_COMMAND="prompt_command"
 PS1="\$ "
 
+export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANROFFOPT="-P -c"
+
 export PATH=$HOME/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
 export XDG_SCREENSHOTS_DIR=$HOME/screenshots
 export QT_QPA_PLATFORMTHEME=gtk2
 chmod -R 755 $HOME/bin
+
+# SOURCE
+
+if [ -f ~/.bash_shortcuts ]; then
+    source ~/.bash_shortcuts
+fi
