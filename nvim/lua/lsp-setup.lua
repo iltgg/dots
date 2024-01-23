@@ -38,6 +38,7 @@ local on_attach = function(_, bufnr)
   end, '[W]orkspace [L]ist Folders')
 
   -- formatting is handled by ./plugins/conform.lua
+  -- see kickstart.nvim for nvim lsp formatting
 end
 
 -- document existing key chains

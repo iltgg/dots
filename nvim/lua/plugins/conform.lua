@@ -20,7 +20,7 @@ return {
   config = function(_, opts)
     require('conform').setup(opts)
     vim.keymap.set('n', '<leader>f', function()
-      require('conform').format()
+      require('conform').format({ lsp_fallback = true })
     end, { desc = '[F]ormat buffer' })
   end,
 }
