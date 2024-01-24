@@ -29,6 +29,7 @@ Desktop:
 - wofi
 - mako
 - grimblast (aur)
+- hyprpicker
 - wl-clipboard
 - swappy
 
@@ -41,7 +42,7 @@ Bar:
 - jq
 - socat
 
-Equalizer Config:
+Equalizer Config (DT-990):
 - pipewire
 
 Power Menu and Lock:
@@ -64,6 +65,9 @@ Edit configs if not using:
 Code/text editing:
 - neovim
 
+Terminal file manager:
+- ranger
+
 Misc:
 - btop
 - cava (aur)
@@ -85,4 +89,6 @@ Copy `.bashrc`, `.inputrc`, and/or `.vimrc` to your home directory
 
 ## Updating
 
-`update-local.sh` removes local nvim directory before copying (potential update to use rsync)
+`update-local.sh` does not remove files, only overwrites. Delete directory(ies) for fresh update.
+
+`set-mcahine.sh` changes certain config files to machine specific settings, view script comments for details.
