@@ -11,7 +11,8 @@ return {
     end
     vim.keymap.set({ 'n' }, '<leader>o', minifiles_toggle, { desc = '[O]pen Files' })
     vim.api.nvim_set_hl(0, 'MiniFilesNormal', { link = 'Normal' })
-    vim.api.nvim_set_hl(0, 'MiniFilesBorder', { link = 'Normal' })
+    vim.api.nvim_set_hl(0, 'MiniFilesBorder', { link = 'Constant' })
+    vim.api.nvim_set_hl(0, 'MiniFilesTitleFocused', { link = 'TelescopeBorder' })
     vim.api.nvim_create_autocmd('FileType', {
       pattern = 'minifiles',
       callback = function()

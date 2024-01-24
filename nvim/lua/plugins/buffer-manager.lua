@@ -25,6 +25,7 @@ return {
   config = function(_, opts)
     require('buffer_manager').setup(opts)
     vim.api.nvim_set_hl(0, 'BufferManagerModified', { fg = '#D19A66' })
+    vim.api.nvim_set_hl(0, 'BufferManagerBorder', { link = 'Type' })
 
     local map_opts = { noremap = true }
     local map = vim.keymap.set
