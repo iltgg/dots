@@ -11,6 +11,8 @@ require('telescope').setup({
   },
 })
 
+vim.api.nvim_set_hl(0, 'TelescopePreviewLine', { bg = '#ebd09c' })
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
