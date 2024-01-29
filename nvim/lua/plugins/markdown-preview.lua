@@ -4,7 +4,7 @@ return {
   cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
   ft = { 'markdown' },
   build = 'cd app && npm install',
-  config = function()
+  init = function()
     vim.g.mkdp_filetypes = { 'markdown' }
     -- setting globals after init doesn't change plugin behaviour
     -- if nvim is called with NVIM_MD_AUTO=true then the plugin will load in "wiki" mode
@@ -15,5 +15,4 @@ return {
       vim.g.mkdp_combine_preview = 1
     end
   end,
-  ft = { 'markdown' },
 }
