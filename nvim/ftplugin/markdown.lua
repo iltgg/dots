@@ -1,3 +1,8 @@
+vim.keymap.set('n', '<leader>wc', 'g<C-g>', { desc = '[W]ord [C]ount (naive)' })
+
+vim.keymap.set({ 'i' }, '<C-l>', '<c-g>u<Esc>[s1z=`]a<c-g>u') -- Thank you Gilles Castel
+vim.keymap.set({ 'n' }, '<C-l>', '[s1z=`]')
+
 vim.keymap.set('n', 'mi', 'ysiw*e', { remap = true })
 vim.keymap.set('n', 'mI', 'ds*', { remap = true })
 vim.keymap.set('v', 'mi', 'S*e', { remap = true })
