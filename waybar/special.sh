@@ -1,11 +1,11 @@
 #!/bin/sh
 
-SPECIAL='activespecial>>special:(.*?),'
-SPECIALE='activespecial>>(.*?),'
+# SPECIAL='activespecial>>special:(.*?),'
+SPECIAL='activespecial>>(.*?),'
 WINDOW='activewindow>>'
 
 handle() {
-    if [[ $1 =~ $WINDOW ]] then
+    if [[ $1 =~ $WINDOW ]] || [[ $1 =~ $SPECIAL ]] then
         OUT=$(hyprctl monitors -j | jq --raw-output 'map(select(.specialWorkspace.name!="")) | map(.specialWorkspace.name) | map(split(":")[1]) | join(" ")')
         echo $OUT
     fi
