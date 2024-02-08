@@ -67,6 +67,7 @@ Code/text editing:
 
 Terminal file manager:
 - ranger
+  - ueberzugpp (aur)
 
 Misc:
 - btop
