@@ -21,7 +21,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         # cp -r ./pipewire ~/.config/
         cp -r ./swaylock ~/.config/
         cp -r ./waybar ~/.config/
-        cp -r ./wofi ~/.config/
+        # cp -r ./wofi ~/.config/
+        cp -r ./fuzzel ~/.config
         cp -r ./cava ~/.config/
         cp -r ./mako ~/.config/
         cp -r ./nvim ~/.config/
@@ -43,7 +44,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         # cp -r ./pipewire ~/.config/
         cp -r ./swaylock ~/.config/
         cp -r ./waybar ~/.config/
-        cp -r ./wofi ~/.config/
+        # cp -r ./wofi ~/.config/
+        cp -r ./fuzzel ~/.config
         cp -r ./cava ~/.config/
         cp -r ./mako ~/.config/
         cp -r ./nvim ~/.config/

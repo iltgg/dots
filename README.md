@@ -26,7 +26,7 @@ Fonts:
 Desktop:
 - hyprland
 - hyprpaper
-- wofi
+- fuzzel
 - mako
 - grimblast (aur)
 - hyprpicker

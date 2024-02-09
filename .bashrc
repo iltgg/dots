@@ -25,6 +25,8 @@ shopt -s checkwinsize
 shopt -s histappend
 PROMPT_COMMAND='history -a'
 
+stty -ixon # disables XON/XOFF to allow <C-s> to i-search
+
 # ALIASES
 
 alias ls='ls --color=auto'
@@ -213,6 +215,7 @@ export MANROFFOPT="-P -c"
 export PATH=$HOME/bin:$PATH
 export VISUAL=vim
 export EDITOR=vim
+export TERMINAL=alacritty
 export XDG_SCREENSHOTS_DIR=$HOME/screenshots
 export QT_QPA_PLATFORMTHEME=gtk2
 chmod -R 755 $HOME/bin
