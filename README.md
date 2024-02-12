@@ -92,4 +92,4 @@ Copy `.bashrc`, `.inputrc`, and/or `.vimrc` to your home directory
 
 `update-local.sh` does not remove files, only overwrites. Delete directory(ies) for fresh update.
 
-`set-mcahine.sh` changes certain config files to machine specific settings, view script comments for details.
+`set-machine.sh` changes certain config files to machine specific settings, view script comments for details.

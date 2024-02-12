@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # set config files to [l]aptop or [d]esktop
-# currently a proof of concept
+# TODO:
+#   - fix linting issues
+#   - make more efficient
 
 # USAGE GUIDE:
 # prefix all mods with
@@ -32,9 +34,10 @@ if [[ $# -eq 0 ]]; then
 fi
 
 # machine-code comment-string file
+# setMachine {machine} {comment string} {file}
 setMachine () {
     # get lines with ==set
-    lines=$(grep ==set -n $3)
+    lines=$(grep "==set" -n "$3")
     SAVEIFS=$IFS
     IFS=$'\n'
     lines=($lines)
