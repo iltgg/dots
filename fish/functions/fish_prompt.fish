@@ -9,7 +9,7 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_git_prompt_hide_untrackedfiles 1
     end
     if not set -q __fish_git_prompt_color_branch
-        set -g __fish_git_prompt_color_branch magenta --bold
+        set -g __fish_git_prompt_color_branch yellow --bold
     end
     if not set -q __fish_git_prompt_showupstream
         set -g __fish_git_prompt_showupstream informative
@@ -45,17 +45,21 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     # PWD
+    set_color green
+    echo -n [(date +%H:%M)]
     set_color $color_cwd
-    echo -n (prompt_pwd)
+    echo -n [(prompt_pwd)]
     set_color normal
 
-    printf '%s ' (fish_vcs_prompt)
+    # printf '%s ' (fish_vcs_prompt)
+    echo -n (string trim (fish_vcs_prompt))
 
     set -l status_color (set_color $fish_color_status)
     set -l statusb_color (set_color --bold $fish_color_status)
     set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
     echo -n $prompt_status
-    set_color normal
 
+    set_color magenta
     echo -n "$suffix "
+    set_color normal
 end
