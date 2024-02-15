@@ -21,7 +21,7 @@ Dependencies of dependencies not listed
 ### Desktop
 
 Fonts:
-- Hack Nerd Font
+- JetBrainsMono Nerd Font
 
 Desktop:
 - hyprland
@@ -57,8 +57,8 @@ Edit configs if not using:
 - thunar
 - spotify
 - discord
-- ~~kitty~~ does not render italics correctly for Hack (known issue, not going to be resolved)
-- alacritty
+- kitty
+- fish
 
 ### Utilities
 
@@ -67,7 +67,6 @@ Code/text editing:
 
 Terminal file manager:
 - ranger
-  - ueberzugpp (aur)
 
 Misc:
 - btop
