@@ -3,6 +3,7 @@ vim.keymap.set({ 'n' }, '<C-d>', '<C-d>zz')
 vim.keymap.set({ 'n' }, '<C-u>', '<C-u>zz')
 
 vim.keymap.set({ 'i', 'n' }, '<C-s>', '<Cmd>w<CR>')
+vim.keymap.set('n', 'cd', '<Cmd>cd %:h<CR>', { desc = '[C]hange working [d]irectory to current buffer' })
 
 -- leader is space
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
