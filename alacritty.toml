@@ -31,6 +31,7 @@ family = "Hack Nerd Font"
 [window]
 dynamic_padding = true
 opacity = 0.8
+dynamic_title = true
 
 [keyboard]
 bindings = [

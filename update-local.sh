@@ -15,7 +15,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
             ./set-machine.sh l
         fi
         # rm -r ~/.config/nvim
-        cp ./alacritty.toml ~/.config/
+        # cp ./alacritty.toml ~/.config/
+        cp -r ./kitty ~/.config/
         cp -r ./hypr ~/.config/
         cp -r ./neofetch ~/.config/
         # cp -r ./pipewire ~/.config/
@@ -29,8 +30,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp -r ./wlogout ~/.config/
         cp -r ./swappy ~/.config/
         cp -r ./ranger ~/.config/
-        cp ./.bashrc ~/
-        cp ./.inputrc ~/
+        cp -r ./fish ~/.config/
+        # cp ./.bashrc ~/
+        # cp ./.inputrc ~/
         cp ./.vimrc ~/
         if [[ $LAPTOP =~ ^[Yy]$ ]]; then
             ./set-machine.sh d
@@ -38,7 +40,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "update complete"
     elif [[ $REPLY =~ ^[s]$ ]]; then
         # rm -r ~/.config/nvim
-        cp ./alacritty.toml ~/.config/
+        # cp ./alacritty.toml ~/.config/
+        cp -r ./kitty ~/.config/
         # cp -r ./hypr ~/.config/
         cp -r ./neofetch ~/.config/
         # cp -r ./pipewire ~/.config/
@@ -52,8 +55,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp -r ./wlogout ~/.config/
         cp -r ./swappy ~/.config/
         cp -r ./ranger ~/.config/
-        cp ./.bashrc ~/
-        cp ./.inputrc ~/
+        cp -r ./fish ~/.config/
+        # cp ./.bashrc ~/
+        # cp ./.inputrc ~/
         cp ./.vimrc ~/
         echo "update complete | excluding (hyprland)"
     fi
