@@ -1,11 +1,14 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
-
     # FISH CONFIGURATION
 
     set -g fish_greeting
     set -g fish_key_bindings fish_vi_key_bindings
     function fish_mode_prompt; end
+    # create a file in ./functions called `extra_terminal_shortcuts.fish` (this file is git ignored)
+    # add a function called extra_terminal_shortcuts
+    # place any per-machine aliases inside
+    # place any per-machine functions outside
+    extra_terminal_shortcuts
 
     # ALIASES
 
@@ -32,6 +35,8 @@ if status is-interactive
     alias viw='NVIM_MD_AUTO=true nvim' # mkdown auto preview
 
     alias sudo='sudo '
+
+    # FUNCTIONS
 
     # EXPORTS
 

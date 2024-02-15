@@ -1,2 +1,3 @@
 **/__pycache__
 nvim/lazy-lock.json
+fish/functions/extra_terminal_shortcuts.fish
