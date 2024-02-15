@@ -1,4 +1,10 @@
 if status is-interactive
+# <<set l
+#     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+#         exec Hyprland
+#     end
+# >>set
+
     # FISH CONFIGURATION
 
     set -g fish_greeting

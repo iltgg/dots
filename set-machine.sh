@@ -92,6 +92,7 @@ if [[ $1 == "l" ]]; then
     setMachine 'l' '# ' ./hypr/apps.conf
     setMachine 'l' '# ' ./hypr/binds.conf
     setMachine 'l' '# ' ./hypr/hyprland.conf
+    setMachine 'l' '# ' ./fish/config.fish
     echo "set hyprland config to laptop"
     exit 0
 fi
@@ -100,6 +101,7 @@ if [[ $1 == "d" ]]; then
     setMachine 'd' '# ' ./hypr/apps.conf
     setMachine 'd' '# ' ./hypr/binds.conf
     setMachine 'd' '# ' ./hypr/hyprland.conf
+    setMachine 'd' '# ' ./fish/config.fish
     echo "set hyprland config to desktop"
     exit 0
 fi
