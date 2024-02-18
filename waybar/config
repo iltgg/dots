@@ -11,7 +11,8 @@
   "modules-center": ["mpris"],
   "modules-right": [
     "tray",
-    "pulseaudio",
+    "pulseaudio#output",
+    "pulseaudio#input",
     "battery",
     "backlight",
     "clock",
@@ -49,11 +50,17 @@
     "show-passive-items": true,
     "spacing": 5
   },
-  "pulseaudio": {
+  "pulseaudio#output": {
     "format": "<span color='#ABB2BF'>🔊</span> {volume}%",
     "format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
     "on-click": "~/.config/waybar/bin/toggle_pavu.sh",
     "on-click-right": "pamixer -t"
+  },
+  "pulseaudio#input": {
+    "format-source": "󰍬 LIVE",
+    "format-source-muted": "󰍭 MUTE",
+    "format": "{format_source}",
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -100,3 +107,5 @@
     "on-click": "~/.config/waybar/bin/toggle_network.sh"
   }
 }
+
+// vim: ft=json expandtab sw=2 ts=2
