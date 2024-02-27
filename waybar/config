@@ -51,14 +51,14 @@
     "spacing": 5
   },
   "pulseaudio#output": {
-    "format": "<span color='#ABB2BF'>🔊</span> {volume}%",
-    "format-muted": "<span color='#ABB2BF'>🔇</span><span color='#323842'> {volume}%</span>",
+    "format": "󰕾 {volume}%",
+    "format-muted": "󰸈<span color='#525862'> {volume}%</span>",
     "on-click": "~/.config/waybar/bin/toggle_pavu.sh",
     "on-click-right": "pamixer -t"
   },
   "pulseaudio#input": {
     "format-source": "󰍬 LIVE",
-    "format-source-muted": "󰍭 MUTE",
+    "format-source-muted": "󰍭 <span color='#525862'>MUTE</span>",
     "format": "{format_source}",
     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
   },
