@@ -14,7 +14,8 @@ cp -r ~/.config/fuzzel ./
 cp -r ~/.config/cava ./
 cp -r ~/.config/mako ./
 cp -r ~/.config/nvim ./
-cp -r ~/.config/wlogout ./
+# cp -r ~/.config/wlogout ./
+cp -r ~/.config/simpleboard ./
 cp -r ~/.config/swappy ./
 cp -r ~/.config/ranger ./
 cp -r ~/.config/fish ./

@@ -27,7 +27,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp -r ./cava ~/.config/
         cp -r ./mako ~/.config/
         cp -r ./nvim ~/.config/
-        cp -r ./wlogout ~/.config/
+        # cp -r ./wlogout ~/.config/
+        cp -r ./simpleboard ~/.config/
         cp -r ./swappy ~/.config/
         cp -r ./ranger ~/.config/
         cp -r ./fish ~/.config/
@@ -52,7 +53,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         cp -r ./cava ~/.config/
         cp -r ./mako ~/.config/
         cp -r ./nvim ~/.config/
-        cp -r ./wlogout ~/.config/
+        # cp -r ./wlogout ~/.config/
+        cp -r ./simpleboard ~/.config/
         cp -r ./swappy ~/.config/
         cp -r ./ranger ~/.config/
         cp -r ./fish ~/.config/

@@ -46,7 +46,7 @@ Equalizer Config (DT-990):
 - pipewire
 
 Power Menu and Lock:
-- wlogout (aur)
+- [simpleboard](https://github.com/iltgg/simpleboard)
 - swaylock
 
 ### Default Applications
