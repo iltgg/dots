@@ -1,7 +1,7 @@
 ignore-empty-password
 daemonize
 indicator-caps-lock
-font=Hack Nerd Font
+font=JetbrainsMono NF
 font-size=40
 indicator-radius=200
 indicator-thickness=100
