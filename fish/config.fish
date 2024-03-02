@@ -32,7 +32,6 @@ if status is-interactive
     alias ....='cd ../../..'
     alias .....='cd ../../../..'
 
-    alias vi='nvim' # TODO: translate bash function
     alias svi='sudo vim'
     alias vin='nvim'
     alias vi.='nvim .'
@@ -42,7 +41,10 @@ if status is-interactive
 
     alias sudo='sudo '
 
-    # FUNCTIONS
+    ## FISH ALIASES
+
+    alias bd='prevd'
+    alias nd='nextd'
 
     # EXPORTS
 
