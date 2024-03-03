@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # automatically spawn and position window for screenshot
+# from an empty workspace launch in a non-floating terminal
 
 IFS=';' read -rs -d t -p $'\e[16t' -a CELL_SIZE
 
@@ -37,7 +38,7 @@ hyprctl dispatch togglefloating address:${CAVA}
 
 hyprctl dispatch resizewindowpixel exact $((CELLW*80)) $((CELLH*20)),address:${BTOP}
 hyprctl dispatch resizewindowpixel exact $((CELLW*88)) $((CELLH*20)),address:${NVIM}
-hyprctl dispatch resizewindowpixel exact $((CELLW*89)) $((CELLH*23)),address:${CAVA}
+hyprctl dispatch resizewindowpixel exact $((CELLW*89-11)) $((CELLH*23)),address:${CAVA}
 
 hyprctl dispatch movewindowpixel exact $((WIDTH-CELLW*89-WIDTH/40-LRPAD)) $((TPAD)),address:${CAVA}
 hyprctl dispatch movewindowpixel exact $((WIDTH-CELLW*80-WIDTH/80-LRPAD)) $((TPAD+CELLH*18)),address:${BTOP}

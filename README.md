@@ -2,7 +2,7 @@
 
 Heavily personalised `Hyprland` based desktop following the onedark color scheme. 
 
-![riced desktop](/rice.png?raw=true)
+![riced desktop](/rice.jpg?raw=true)
 
 Wallpaper credit:
 
