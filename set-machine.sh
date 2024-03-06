@@ -16,8 +16,8 @@
 # currently l or d
 #
 # EXAMPLE:
-# monitor=,preferred,auto,1 # ==set l
-# comments out if l not specified, comments in if l specified
+# monitor=,preferred,auto,1 # ==set l v
+# comments out if l and/or v not specified, comments in if l and/or v specified
 #
 # MULTI-LINE BLOCKS:
 # specify start with
@@ -27,6 +27,13 @@
 # entire block will be commented in/out
 # unclosed blocks have undefined behaviour
 # nested blocks are not supported
+#
+# RUNNING SCRIPT:
+# ./set-machine.sh [machines comma separated]
+#
+# EXAMPLE:
+# ./set-machine.sh 'l,lt1440'
+# sets configs to laptop with 1440 external monitor on top
 
 if [[ $# -eq 0 ]]; then
     echo "machine not supplied"
@@ -41,7 +48,10 @@ setMachine () {
     SAVEIFS=$IFS
     IFS=$'\n'
     lines=($lines)
+    IFS=$','
+    machines=($1)
     IFS=$SAVEIFS
+
 
     for (( i=0; i<${#lines[@]}; i++ ))
     do
@@ -49,7 +59,14 @@ setMachine () {
         cmd=$(echo ${lines[$i]} | awk -F "==set" '{print $2}') # get machines
 
         sed -i "${line}s/^$2//" $3                    # remove comments
-        if ! echo $cmd | grep -q -E "(\s|^)$1\b"; then  # if not present
+        contains=0
+        for (( j=0; j<${#machines[@]}; j++ ))
+        do
+            if echo $cmd | grep -q -E "(\s|^)${machines[$j]}\b"; then  # if present
+                contains=1
+            fi
+        done
+        if [[ contains -eq 0 ]]; then
             sed -i "${line}s/^/$2/" $3                # add comment
         fi
     done
@@ -75,11 +92,25 @@ setMachine () {
         cmd=$(echo ${starts[$i]} | awk -F "<<set" '{print $2}') # get machines
         start=$((start + 1))
         end=$((end - 1))
+
         for (( j=$start; j<=$end; j++ ))
         do
             sed -i "${j}s/^$2//" $3                    # remove comments
         done
-        if ! echo $cmd | grep -q -E "(\s|^)$1\b"; then # if not present
+        # if ! echo $cmd | grep -q -E "(\s|^)$1\b"; then # if not present
+        #     for (( j=$start; j<=$end; j++ ))
+        #     do
+        #         sed -i "${j}s/^/$2/" $3                # add comment
+        #     done
+        # fi
+        contains=0
+        for (( j=0; j<${#machines[@]}; j++ ))
+        do
+            if echo $cmd | grep -q -E "(\s|^)${machines[$j]}\b"; then  # if present
+                contains=1
+            fi
+        done
+        if [[ contains -eq 0 ]]; then
             for (( j=$start; j<=$end; j++ ))
             do
                 sed -i "${j}s/^/$2/" $3                # add comment
@@ -88,20 +119,20 @@ setMachine () {
     done
 }
 
-if [[ $1 == "l" ]]; then
-    setMachine 'l' '# ' ./hypr/apps.conf
-    setMachine 'l' '# ' ./hypr/binds.conf
-    setMachine 'l' '# ' ./hypr/hyprland.conf
-    setMachine 'l' '# ' ./fish/config.fish
-    echo "set hyprland config to laptop"
-    exit 0
-fi
+# ADD FILES HERE:
 
-if [[ $1 == "d" ]]; then
-    setMachine 'd' '# ' ./hypr/apps.conf
-    setMachine 'd' '# ' ./hypr/binds.conf
-    setMachine 'd' '# ' ./hypr/hyprland.conf
-    setMachine 'd' '# ' ./fish/config.fish
-    echo "set hyprland config to desktop"
-    exit 0
-fi
+setMachine "$1" '# ' ./hypr/apps.conf
+setMachine "$1" '# ' ./hypr/binds.conf
+setMachine "$1" '# ' ./hypr/hyprland.conf
+setMachine "$1" '# ' ./fish/config.fish
+
+case "$1" in
+    "l")
+        echo "set configs to laptop"
+        ;;
+    "d")
+        echo "set configs to desktop"
+        ;;
+    *) echo "set configs to $1"
+        ;;
+esac
