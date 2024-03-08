@@ -29,7 +29,7 @@ Desktop:
 - fuzzel
 - mako
 - grimblast (aur)
-- hyprpicker
+- hyprpicker (aur)
 - wl-clipboard
 - swappy
 
