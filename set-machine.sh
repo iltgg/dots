@@ -8,12 +8,13 @@
 # USAGE GUIDE:
 # prefix all mods with
 #   ==set
-# use [machine] to specify lines to comment in
+# use [machine] to specify lines to comment in.
 # separate multiple machines with spaces.
 # script will search file(s) for lines with ==set
 #
 # MACHINE:
-# currently l or d
+# can be any word or combination of characters
+# e.g. l d laptop desktop tablet
 #
 # EXAMPLE:
 # monitor=,preferred,auto,1 # ==set l v
