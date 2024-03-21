@@ -51,7 +51,7 @@ if status is-interactive
     set -gx MANPAGER "less -R --use-color -Dd+r -Du+b"
     set -gx MANROFFOPT "-P -c"
 
-    set -gx PATH $HOME/bin:$PATH
+    set -gx PATH $HOME/bin:$HOME/.local/bin:$PATH
     set -gx VISUAL vim
     set -gx EDITOR vim
     set -gx TERMINAL kitty
