@@ -1,6 +1,6 @@
 #!/bin/bash
 
-size=$(hyprctl -j getoption general:gaps_in | jq --raw-output '.int')
+size=$(hyprctl -j getoption general:gaps_in | jq --raw-output '.custom[0:1] | tonumber')
 
 if [[ $size -gt 0 ]]; then
     hyprctl keyword general:gaps_in 0
