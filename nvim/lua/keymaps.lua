@@ -17,6 +17,8 @@ vim.keymap.set('n', 'j', "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' 
 -- arrow key maps, consider the non-qwertyians among us
 vim.keymap.set('n', '<Up>', "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'k' : 'gk'", { expr = true, silent = true })
 vim.keymap.set('n', '<Down>', "v:count ? (v:count > 5 ? \"m'\" . v:count : '') . 'j' : 'gj'", { expr = true, silent = true })
+vim.keymap.set('n', '<Left>', 'h')
+vim.keymap.set('n', '<Right>', 'l')
 
 -- diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
