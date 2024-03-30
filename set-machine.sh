@@ -124,6 +124,7 @@ setMachine () {
 
 setMachine "$1" '# ' ./hypr/apps.conf
 setMachine "$1" '# ' ./hypr/binds.conf
+setMachine "$1" '# ' ./hypr/options.conf
 setMachine "$1" '# ' ./hypr/hyprland.conf
 setMachine "$1" '# ' ./fish/config.fish
 

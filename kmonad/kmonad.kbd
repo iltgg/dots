@@ -1,0 +1,61 @@
+(defcfg
+  ;; ** For Linux **
+  ;; input  (device-file "/dev/input/by-id/usb-04d9_USB-HID_Keyboard-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+  ;; allow-cmd true
+)
+
+(defsrc
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps    a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(deflayer qwerty
+ caps    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+ grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+ tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
+ esc     a    s    d    f    g    h    j    k    l    ;    '    ret
+ lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+ lctl    lmet lalt           spc            @ext rmet cmp  rctl
+)
+
+(deflayer colemak-dh
+  caps     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv      1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab      q    w    f    p    b    j    l    u    y    ;    [    ]    \\
+  esc      a    r    s    t    g    m    n    e    i    o    '    ret
+  lsft       z    x    c    d    v    k    h    ,    .    /    rsft
+  lctl     lmet lalt           spc            @ext rmet _    _
+)
+
+(deflayer extend
+  _        _    _    _    _    _    _    _    _    _    _    _    _    
+  _        @col @qwe _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    left down up   right _    _    _ 
+  _          _    _    _    _    _    _    _    _    _    _    _ 
+  _        _    _              _              _    _    _    _
+)
+
+(defalias
+ ext  (layer-toggle extend)
+ qwe  (layer-switch qwerty)
+ col  (layer-switch colemak-dh)
+)
+
