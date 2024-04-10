@@ -2,7 +2,7 @@
 vim.keymap.set({ 'n' }, '<C-d>', '<C-d>zz')
 vim.keymap.set({ 'n' }, '<C-u>', '<C-u>zz')
 
-vim.keymap.set({ 'i', 'n' }, '<C-s>', '<Cmd>w<CR>')
+vim.keymap.set({ 'i', 'n' }, '<C-s>', '<Cmd>w<CR>', { desc = 'Save current buffer' })
 vim.keymap.set('n', 'cd', '<Cmd>cd %:h<CR>', { desc = '[C]hange working [d]irectory to current buffer' })
 
 -- leader is space
@@ -25,6 +25,11 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- yank and paste from system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]])
+vim.keymap.set({ 'n', 'v' }, '<leader>P', [["+P]])
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

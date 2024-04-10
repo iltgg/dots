@@ -10,10 +10,8 @@ vim.wo.relativenumber = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = 'unnamedplus'
+-- Sync clipboard between system and Neovim.
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -38,13 +36,21 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- highlight current line cursor is on
 vim.o.cursorline = true
 -- vim.cmd("hi CursorLine gui=underline cterm=underline")
 
-vim.o.spell = true
-vim.o.tabstop = 4
+-- Minimum lines to show above and around cursor
+-- vim.opt.scrolloff = 8
+-- vim.opt.sidescrolloff = 8
 
+-- spelling
+vim.o.spell = true
+
+-- tab style
+vim.o.tabstop = 4
 vim.o.listchars = 'tab:▹▹▸,trail:~'
 vim.cmd('set invlist')
 
+-- let Neovim control terminal name, behavior will vary by terminal
 vim.o.title = true
