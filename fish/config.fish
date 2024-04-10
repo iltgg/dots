@@ -56,6 +56,7 @@ if status is-interactive
     set -gx EDITOR vim
     set -gx TERMINAL kitty
     set -gx XDG_SCREENSHOTS_DIR $HOME/screenshots
-    set -gx QT_QPA_PLATFORMTHEME gtk2
+    # set -gx QT_QPA_PLATFORMTHEME gtk2
+    set -gx QT_STYLE_OVERRIDE kvantum
     chmod -R 755 $HOME/bin
 end
