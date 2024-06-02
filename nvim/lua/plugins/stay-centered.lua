@@ -1,5 +1,6 @@
 return {
-  'arnamak/stay-centered.nvim',
+  -- 'arnamak/stay-centered.nvim',
+  'iltgg/stay-centered.nvim',
   event = { 'BufEnter', 'CursorMoved', 'CursorMovedI' },
   opts = { skip_filetypes = { 'minifiles' } },
   config = function(_, opts)
