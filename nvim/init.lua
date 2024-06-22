@@ -8,6 +8,15 @@ NEOVIM CONFIGURATION
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- [[ vscode-neovim config ]]
+if vim.g.vscode then
+  require('lazy-bootstrap')
+  require('vscode-plugins')
+  require('vscode-options')
+  require('vscode-keymaps')
+  return
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 require('lazy-bootstrap')
 
