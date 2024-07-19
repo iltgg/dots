@@ -13,6 +13,7 @@ if vim.g.vscode then
   require('lazy-bootstrap')
   require('vscode-plugins')
   require('vscode-options')
+  require('keymaps')
   require('vscode-keymaps')
   return
 end
