@@ -25,6 +25,8 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
+    "all-outputs": false,
+    "active-only": false,
     "format": "{icon}",
     "justify": "center",
     "cursor": true,
