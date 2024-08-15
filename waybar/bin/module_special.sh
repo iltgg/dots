@@ -6,12 +6,14 @@ WINDOW='activewindow>>'
 
 handle() {
     if [[ $1 =~ $WINDOW ]] || [[ $1 =~ $SPECIAL ]]; then
-        OUT=$(hyprctl monitors -j | jq --raw-output --arg display "$WAYBAR_OUTPUT_NAME" '
-          map(select(.name==$display))
-        | map(select(.specialWorkspace.name!=""))
-        | map(.specialWorkspace.name)
-        | map(split(":")[1])
-        | join(" ")')
+        OUT=$(hyprctl monitors -j | jq --raw-output --unbuffered --compact-output  --arg display "$WAYBAR_OUTPUT_NAME" '
+          map(select(.name==$display))            # get monitor matching waybar display
+        | map(select(.specialWorkspace.name!="")) # get special workspace with name
+        | map(.specialWorkspace.name)             # get workspace name
+        | map(split(":")[1])                      # extract name
+        | join(" ")                               # extract string from array
+        | if . == "" then "none" else . end       # if no special, send none string
+        | {"text": ., "alt": .}')
         echo "$OUT"
     fi
 }

@@ -28,13 +28,20 @@
     "format": "{icon}",
     "justify": "center",
     "cursor": true,
-    "format-icons": {
-      "discord": "󰙯 ",
-      "spotify": " "
-    }
   },
   "custom/special": {
-    "exec": "~/.config/waybar/bin/module_special.sh"
+    "exec": "~/.config/waybar/bin/module_special.sh",
+    "return-type": "json",
+    "format": "{icon}",
+    "justify": "center",
+    "format-icons": {
+      "discord": "󰙯 ",
+      "spotify": " ",
+      "scratchpad": "󰈙 ",
+      "none": "",
+      "default": " "
+    },
+    "on-click": "~/.config/hypr/bin/close_special.sh"
   },
   "hyprland/window": {
     "separate-outputs": true,

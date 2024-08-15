@@ -34,7 +34,7 @@ tooltip {
 
 #custom-icon {
   font-size: 18px;
-  padding: 0 0.4em 0 0.5em;
+  padding: 0 0.35em 0 0.6em;
   color: #1793d1;
   background-color: #333333;
   transition: 0.1s;
@@ -70,7 +70,8 @@ tooltip {
   text-shadow: none;
 }
 #custom-special {
-  padding: 0 1em;
+  font-size: 18px;
+  padding: 0 0.35em 0 0.7em;
   color: #21252b;
   background-color: #61afef;
 }
