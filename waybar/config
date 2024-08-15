@@ -1,7 +1,8 @@
 {
   "layer": "top",
-  "height": 32,
+  "height": 34,
   "modules-left": [
+    "custom/icon",
     "hyprland/workspaces",
     "custom/special",
     "hyprland/submap",
@@ -17,11 +18,19 @@
     "clock",
     "network"
   ],
+  "custom/icon": {
+    "format": " ",
+    "justify": "center",
+    "on-click": "~/.config/hypr/bin/toggle_simpleboard.sh",
+    "tooltip": false
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
+    "justify": "center",
+    "cursor": true,
     "format-icons": {
-      "discord": "󰙯",
-      "spotify": ""
+      "discord": "󰙯 ",
+      "spotify": " "
     }
   },
   "custom/special": {

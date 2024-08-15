@@ -6,7 +6,12 @@ WINDOW='activewindow>>'
 
 handle() {
     if [[ $1 =~ $WINDOW ]] || [[ $1 =~ $SPECIAL ]]; then
-        OUT=$(hyprctl monitors -j | jq --raw-output 'map(select(.specialWorkspace.name!="")) | map(.specialWorkspace.name) | map(split(":")[1]) | join(" ")')
+        OUT=$(hyprctl monitors -j | jq --raw-output --arg display "$WAYBAR_OUTPUT_NAME" '
+          map(select(.name==$display))
+        | map(select(.specialWorkspace.name!=""))
+        | map(.specialWorkspace.name)
+        | map(split(":")[1])
+        | join(" ")')
         echo "$OUT"
     fi
 }

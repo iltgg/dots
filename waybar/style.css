@@ -8,7 +8,7 @@ window#waybar {
 
 tooltip {
   background-color: rgba(40, 44, 52, 0.92);
-  /* border: 2px solid #abb2bf; */
+  border: 2px solid #abb2bf;
   margin-top: 0;
 }
 
@@ -16,10 +16,13 @@ tooltip {
 .modules-left {
   background-color: rgba(40, 44, 52, 0.8);
   color: #f6f7f9;
-  /* border-radius: 10px; */
   padding: 0 20px;
 }
+.modules-right {
+  border-radius: 0 0 0 10px;
+}
 .modules-left {
+  border-radius: 0 0 10px 0;
   padding: 0 20px 0 0;
 }
 .modules-right > * > * {
@@ -29,17 +32,33 @@ tooltip {
   margin-right: 0px;
 }
 
+#custom-icon {
+  font-size: 18px;
+  padding: 0 0.4em 0 0.5em;
+  color: #1793d1;
+  background-color: #333333;
+  transition: 0.1s;
+}
+#custom-icon:hover {
+  color: #333333;
+  background-color: #1793d1;
+}
+
 #workspaces button {
   background: transparent;
   color: #f6f7f9;
   border: none;
   border-radius: 0;
+  transition: none;
 }
 #workspaces button label {
   font-size: 18px;
 }
 #workspaces button:first-child {
-  /* border-radius: 10px 0 0 10px; */
+}
+#workspaces button.visible {
+  color: #21252b;
+  background-image: linear-gradient(-45deg, #61afef, #c678dd);
 }
 #workspaces button.active {
   color: #21252b;
@@ -69,7 +88,7 @@ tooltip {
   color: #21252b;
   padding: 0 20px;
   font-weight: bold;
-  /* border-radius: 10px; */
+  border-radius: 0 0 10px 10px;
 }
 #mpris.paused {
   background-image: linear-gradient(135deg, #e06c75, #c678dd);
