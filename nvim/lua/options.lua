@@ -41,7 +41,7 @@ vim.o.cursorline = true
 -- vim.cmd("hi CursorLine gui=underline cterm=underline")
 
 -- Minimum lines to show above and around cursor
--- vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 -- vim.opt.sidescrolloff = 8
 
 -- spelling
