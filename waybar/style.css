@@ -4,6 +4,7 @@
 }
 window#waybar {
   background-color: rgba(27, 30, 36, 0.8);
+  /* box-shadow: inset 0px -104px 26px -126px rgba(255,255,255,0.54); */
 }
 
 tooltip {
@@ -14,9 +15,10 @@ tooltip {
 
 .modules-right,
 .modules-left {
-  background-color: rgba(40, 44, 52, 0.8);
+  background-color: rgba(40, 44, 52, 1);
   color: #f6f7f9;
   padding: 0 20px;
+  /* box-shadow: inset 0px -104px 26px -126px rgba(255,255,255,0.54); */
 }
 .modules-right {
   border-radius: 0 0 0 10px;
@@ -54,15 +56,15 @@ tooltip {
 #workspaces button label {
   font-size: 18px;
 }
-#workspaces button:first-child {
-}
-#workspaces button.visible {
-  color: #21252b;
-  background-image: linear-gradient(-45deg, #61afef, #c678dd);
-}
-#workspaces button.active {
+/* #workspaces button:first-child { */
+/* } */
+#workspaces button.active, #workspaces button.visible {
   color: #21252b;
   background-image: linear-gradient(135deg, #61afef, #c678dd);
+}
+#workspaces button.urgent {
+  color: #21252b;
+  background-image: linear-gradient(135deg, #e06c75, #c678dd);
 }
 #workspaces button:hover {
   box-shadow: none;
