@@ -1,5 +1,7 @@
 # dots
 
+**No longer maintained, switched to NixOS**
+
 Heavily personalised `Hyprland` based desktop following the onedark color scheme. 
 
 ![riced desktop](/rice.jpg?raw=true)
