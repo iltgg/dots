@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # automatically spawn and position window for screenshot
 # from an empty workspace launch in a non-floating terminal

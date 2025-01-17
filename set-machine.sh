@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # set config files to [l]aptop or [d]esktop
 # TODO:

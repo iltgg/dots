@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # SPECIAL='activespecial>>special:(.*?),'
 SPECIAL='activespecial>>(.*?),'
